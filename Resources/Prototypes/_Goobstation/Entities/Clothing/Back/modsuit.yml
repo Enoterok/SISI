@@ -65,6 +65,7 @@
       gloves: ClothingModsuitGauntletsStandard
       outerClothing: ClothingModsuitChestplateStandard
       shoes: ClothingModsuitBootsStandard
+    action: ActionToggleSuitPiece # SIS | Fix
   - type: WiresPanel
   - type: ItemSlots
     slots:

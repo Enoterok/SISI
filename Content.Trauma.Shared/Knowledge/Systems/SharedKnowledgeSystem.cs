@@ -67,10 +67,6 @@ public abstract partial class SharedKnowledgeSystem : CommonKnowledgeSystem
         Subs.CVar(_cfg, TraumaCVars.SkillGain, x => _skillGain = x, true);
 
         LoadSkillPrototypes();
-
-        // inky
-        InitializeInky();
-        // /inky
     }
 
     public override void Update(float frameTime)

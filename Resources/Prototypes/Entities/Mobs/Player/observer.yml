@@ -142,6 +142,8 @@
   - type: SIS_GhostSpriteState
   - type: MovementSpeedModifier
     baseWalkSpeed: 24
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
   # SIS-End
 
 # proto for player ghosts specifically
@@ -158,6 +160,10 @@
     interfaces:
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
+      # SIS-Start
+      enum.RespawnUiKey.Key:
+        type: RespawnBoundUserInterface
+      # SIS-End
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -165,6 +171,7 @@
   - type: RadarConsole
     followEntity: true
   # </Goobstation>
+  - type: Respawn # SIS
 
 - type: entity
   parent: BaseMentalAction

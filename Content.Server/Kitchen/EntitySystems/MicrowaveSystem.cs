@@ -42,6 +42,7 @@ using Content.Shared.Chat;
 using Content.Shared.Damage.Components;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Temperature.Components;
+using Content.SIS.Common.Microwave;
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -677,7 +678,13 @@ namespace Content.Server.Kitchen.EntitySystems
                         Spawn(active.PortionedRecipe.Item1.Result, coords);
                     }
                 }
-
+                // SIS-Microwave Start
+                foreach (var soln in microwave.Storage.ContainedEntities)
+                {
+                    var ev = new StopMicrowaveEvent();
+                    RaiseLocalEvent(soln, ref ev);
+                }
+                // SIS-Microwave End
                 _container.EmptyContainer(microwave.Storage);
                 microwave.CurrentCookTimeEnd = TimeSpan.Zero;
                 UpdateUserInterfaceState(uid, microwave);
